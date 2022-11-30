@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  font-family: 'Space Grotesk', sans-serif;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: url(./images/bg-main-desktop.png) no-repeat center/cover;
+  z-index: -1;
+}
+
+@media (min-width: 1440px) {
+  body::after {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 1440px) {
+  body::after {
+    width: 483px;
+  }
+}
+
+@media (max-width: 1200px) {
+  body::after {
+    width: 33vw;
+  }
+}
+
+main {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 1080px;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  align-items: center;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 127px;
+}
+
+.card {
+  color: hsl(0, 0%, 100%);
+  border-radius: 0.625rem;
+  padding: 1.75rem 2rem;
+  min-width: 447px;
+  aspect-ratio: 447/245;
+}
+
+.card-front {
+  background: url(./images/bg-card-front.png) no-repeat center/cover;
+  margin-bottom: 2.3rem;
+  margin-right: 94px;
+}
+
+.card-front img {
+  margin-bottom: 4rem;
+}
+
+.card-front .card-number {
+  font-size: 1.75rem;
+  letter-spacing: 0.125em;
+  margin-bottom: 1.5rem;
+}
+
+.card-front .name-date-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0.125em;
+  font-size: 0.9rem;
+}
+
+.card-back {
+  background: url(./images/bg-card-back.png) no-repeat center/cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 3.7rem;
+  padding-bottom: 2rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.125em;
+  margin-left: 94px;
+}
+
+@media (max-width: 966px) {
+  body {
+    align-items: flex-start;
+  }
+
+  body::after {
+    background: url(./images/bg-main-mobile.png) center/cover no-repeat;
+    width: 100vw;
+    height: 240px;
+  }
+
+  main {
+    padding-top: 2rem;
+    grid-auto-flow: row;
+    grid-auto-rows: 1fr;
+    margin-top: -36px;
+  }
+
+  .cards-container {
+    flex-direction: column-reverse;
+    margin-right: 0;
+  }
+
+  .card {
+    min-width: 286px;
+    max-height: 157px;
+    aspect-ratio: 286/157;
+    border-radius: 0.5rem;
+    padding: 1.125rem 1.25rem;
+  }
+
+  .card-front {
+    margin-top: -63px;
+    margin-right: 57px;
+  }
+
+  .card-front img {
+    margin-bottom: 2.3rem;
+    max-width: 55px;
+  }
+
+  .card-front .card-number {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-front .name-date-container {
+    font-size: 0.58rem;
+  }
+
+  .card-back {
+    margin-left: 57px;
+    font-size: 0.58rem;
+    padding-right: 2.3rem;
+    padding-bottom: 1.25rem;
+  }
+}
+
+form {
+  font-size: 1.125rem;
+  font-weight: 500;
+  max-width: 381px;
+}
+
+form label {
+  font-size: 0.75rem;
+  color: hsl(278, 68%, 11%);
+  display: block;
+  margin-bottom: 10px;
+}
+
+form input {
+  padding: 10px 16px;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(270, 3%, 87%);
+  outline: none;
+  color: hsl(278, 68%, 11%);
+  margin-bottom: 26px;
+  width: 100%;
+}
+
+form input:focus {
+  outline: none;
+  border: 1px solid hsl(278, 68%, 11%);
+}
+
+form input::placeholder {
+  color: hsl(270, 3%, 87%);
+}
+
+.error-text {
+  font-size: 0.75rem;
+  letter-spacing: 0.005em;
+  margin-top: -18px;
+  margin-bottom: 27px;
+  font-weight: 500;
+  color: #d65256;
+  white-space: nowrap;
+}
+
+form input[type='submit'] {
+  padding: 15px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: hsl(278, 68%, 11%);
+  color: #fff;
+  margin-bottom: none;
+  transition: all 0.2s;
+}
+
+form input[type='submit']:hover {
+  transform: scale(0.99);
+}
+
+form input[type='submit']:active {
+  transform: translateY(4px) scale(0.99);
+}
+
+.form-bottom {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 22px;
+}
+
+.exp-div {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  form input {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+
+.confirm-container {
+  font-size: 1.125rem;
+  font-weight: 500;
+  max-width: 381px;
+  text-align: center;
+}
+
+.confirm-container img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 36px;
+}
+
+.confirm-container h1 {
+  font-size: 28;
+  letter-spacing: 0.125em;
+  font-weight: 500;
+  color: hsl(278, 68%, 11%);
+  margin-bottom: 1rem;
+}
+
+.confirm-container p {
+  font-size: 18;
+  font-weight: 500;
+  color: hsl(279, 6%, 55%);
+  margin-bottom: 48px;
+}
+
+.continue-btn {
+  display: block;
+  padding: 15px 16px;
+  border-radius: 0.5rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: hsl(278, 68%, 11%);
+  color: #fff;
+  margin-bottom: none;
+  transition: all 0.2s;
+}
+
+.continue-btn:hover {
+  transform: scale(0.99);
+}
+
+.continue-btn:active {
+  transform: translateY(4px) scale(0.99);
+}
